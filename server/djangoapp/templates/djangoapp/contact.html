@@ -11,15 +11,6 @@
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
-    <style>
-        footer {
-          text-align: center;
-          padding: 3px;
-          background-color: black;
-          color: white;
-        }
-        </style>
-
 </head>
 
     <body>
@@ -28,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-dark techfont">
         <div class="container">
           <div class="navbar-nav align-items-center">
-            <a class="navbar-brand bigbrand" href="{% url 'djangoapp:index' %}">Best Cars Dealership<a>
+            <a class="navbar-brand bigbrand" href="{% url 'djangoapp:index' %}">Best Cars Dealership</a>
             <a class="nav-item nav-link" href="{% url 'djangoapp:about' %}">About us</a>
             <a class="nav-item nav-link" href="{% url 'djangoapp:contact' %}">Contact us</a>
           </div>
@@ -41,16 +32,15 @@
         </div>
       </nav>
 
-    <!--Add a dealer table here -->
-
-    <p>Welcome to the home page</p>
-    <footer>
-        <p><a href="{% url 'djangoapp:contact' %}">Contact Us</a></p>
-      </footer>
+      <div class="container">
+          <div class="jumbotron">
+            <h1>CONTACT US</h1>
+            <h4>You can find us at:</h4>
+            <p>Address: Mountain View, California, United States</p>
+            <p>Phone Number: +23467098359</p>
+          </div>
+      </div>
 
     </body>
-
-    
-
 
 </html>
