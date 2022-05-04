@@ -33,10 +33,21 @@
             <a class="nav-item nav-link" href="{% url 'djangoapp:contact' %}">Contact us</a>
           </div>
           <div class="navbar-nav align-items-center ml-auto">
-              <a class="nav-item nav-link" href="#">New Post</a>
-              <a class="nav-item nav-link" href="#">Drafts</a>
-              <a class="nav-item nav-link" href="#">Log out</a>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="">USERNAME</a>
+            <button class="btn btn-primary" type="submit">LogOut</button>
+
+            {% else %}
+              <form action="{% url 'djangoapp:login' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text"placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="psw">
+                    <button class="btn btn-primary" type="submit">LogIn</button>
+              </form>
+
               
+              <button class="btn btn-primary" onclick="window.location.href='{% url 'djangoapp:registration' %}'"type="submit">SignUp</button>
+              {% endif %}
           </div>
         </div>
       </nav>
